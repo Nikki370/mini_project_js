@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-1</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        h1, h3 {
+            text-align: center;
+            padding: 10px;
+            color: white;
+        }
+        .container {
+            height: 40vh;
+            width: auto;
+            border: 3px solid white;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Box tapping colour changer</h1>
+    <h3>You can tap on boxes and change the background colour</h3>
+    <div class="container">
+        <!-- <div class="box"></div> -->
+    </div>
+
+    <script>
+        function addBox (colour) {
+            const box = document.createElement("div")
+            box.style.backgroundColor = colour
+            box.style.height = "80px"
+            box.style.width = "80px"
+            box.style.border = "2px solid black"
+            box.style.margin = "10px"
+            const mainBox = document.querySelector(".container")
+            mainBox.append(box)
+
+            box.addEventListener('click', function () {
+                const mainBox = document.querySelector(".container")
+                console.log(colour)
+                mainBox.style.backgroundColor = colour
+            })
+
+        }
+        addBox("yellow")
+        addBox("pink")
+        addBox("aqua")
+        addBox("green")
+        addBox("red")
+        addBox("white")
+
+
+    </script>
+</body>
+</html>
